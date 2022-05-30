@@ -1,0 +1,36 @@
+<h1 class="text-center text-decoration-underline">Add Product</h1>
+<form class='container' [formGroup]="addproduct" (ngSubmit)="addingItem()">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Product Name</label>
+    <input type="text" class="form-control" formControlName="pname" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Barcode</label>
+    <input type="email" class="form-control" formControlName="barcode" aria-describedby="emailHelp">
+    <ng-template [ngIf]='submitted==true'>
+      <span style='color:red'>This field is required and barcode should be unique.</span>
+    </ng-template>
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Create Date</label>
+    <input type="text" class="form-control" formControlName="cdate" aria-describedby="emailHelp">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Expired Date</label>
+    <input type="text" class="form-control" formControlName="edate" aria-describedby="emailHelp">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Price</label>
+    <input type="text" class="form-control" formControlName="price" aria-describedby="emailHelp">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Quantity</label>
+    <input type="text" class="form-control" formControlName="quantity" aria-describedby="emailHelp">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

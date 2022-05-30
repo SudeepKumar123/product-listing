@@ -1,0 +1,33 @@
+<h1 class="text-center text-decoration-underline">Edit Product</h1>
+<form class='container' [formGroup]="editProduct" (ngSubmit)='update()'>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Product Name</label>
+    <input type="text" class="form-control" name='pname' formControlName="pname" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Barcode</label>
+    <input type="email" class="form-control" formControlName="barcode" aria-describedby="emailHelp">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Create Date</label>
+    <input type="text" class="form-control" formControlName="cdate" aria-describedby="emailHelp">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Expired Date</label>
+    <input type="text" class="form-control" formControlName="edate" aria-describedby="emailHelp">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Price</label>
+    <input type="text" class="form-control" formControlName="price" aria-describedby="emailHelp">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Quantity</label>
+    <input type="text" class="form-control" formControlName="quantity" aria-describedby="emailHelp">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>

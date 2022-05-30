@@ -1,0 +1,47 @@
+<h1 class='text-decoration-underline text-center m-4'>Login page</h1>
+<form class='container' [formGroup]="loginForm" (ngSubmit)='login()'>
+    <!-- 1 -->
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">User Name</label>
+        <input type="text" class="form-control" formControlName="name" aria-describedby="emailHelp">
+    </div>
+
+    <!-- 2 -->
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Password</label>
+        <div class='row text-end'>
+            <div class="col-12">
+                <input *ngIf='show else elseBlock2' type="password" class="form-control " formControlName="password"
+                    aria-describedby="emailHelp">
+
+                <ng-template #elseBlock2>
+                    <input type="text" class="form-control " formControlName="password" aria-describedby="emailHelp">
+                </ng-template>
+            </div>
+
+            <div class="text-end">
+                <i class="fa fa-eye" (click)="toggle()"
+                    style="position:relative;top:-2rem;right:15px;font-size:30px;cursor:pointer"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3 -->
+    <div *ngIf="rem==false else elseblock" class="form-check" style="position:relative;top:-2rem">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="remember()">
+        <label class="form-check-label" for="flexCheckDefault">
+            Remember me
+        </label>
+    </div>
+
+    <ng-template #elseblock>
+    <div class="form-check" style="position:relative;top:-2rem">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" (click)="remember()" checked>
+        <label class="form-check-label" for="flexCheckChecked">
+          Remember me
+        </label>
+      </div>
+      </ng-template>
+
+    <button type="submit" class="btn btn-primary" style="position:relative;top:-1rem">Submit</button>
+</form>
